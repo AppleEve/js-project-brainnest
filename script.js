@@ -3,7 +3,6 @@ let win = "You win 🥳!"
 let loose = "You loose 😞! ";
 let tie = "No winner 😒"
 
-
 function computerPlay(){
     let randomNumber = Math.floor(Math.random()*3);
     return options[randomNumber];
