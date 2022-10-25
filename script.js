@@ -31,21 +31,21 @@ function playRound(playerSelection, computerSelection){
     playerSelection == "paper" && computerSelection == "rock" ||
     playerSelection == "scissors" && computerSelection == "paper"){
         roundResult.textContent = winnerMessage;
-        roundResult.style.cssText = "color: green;"
+        roundResult.style.cssText = "color: rgb(38,134,71, 0.8);"
         return win;
     } else if (computerSelection == "rock" && playerSelection == "scissors" ||
     computerSelection == "paper" && playerSelection == "rock" ||
     computerSelection == "scissors" && playerSelection == "paper"){
         roundResult.textContent = looserMessage;
-        roundResult.style.cssText = "color: red;"
+        roundResult.style.cssText = "color: rgb(255,84,88, 0.9);"
         return loose;
     } else if (playerSelection === computerSelection){
         roundResult.textContent = tieMessage;
-        roundResult.style.cssText = "color: black;"
+        roundResult.style.cssText = "color: rgb(0, 0, 0, 0.5);"
         return tie;
     } else {
         roundResult.textContent = errorMessage;
-        roundResult.style.cssText = "color: black;"
+        roundResult.style.cssText = "color: rgb(0, 0, 0, 0.5);"
         return tie;
     }
 }
@@ -53,11 +53,11 @@ function game(playerChoice){
     let resultBoard = document.getElementById("resultBoard");
     if (playerScore === 5){
         resultBoard.textContent = "YOU WON THE GAME!"
-        resultBoard.style.cssText = "color: green; border: none;"
+        resultBoard.style.cssText = "color: rgb(38,134,71, 0.8); border: none; font-size: 30px"
         return;
     } else if (computerScore === 5){
         resultBoard.textContent = "YOU LOST THE GAME!"
-        resultBoard.style.cssText = "color: red; border: none;"
+        resultBoard.style.cssText = "color: rgb(255,84,88, 0.9); border: none; font-size: 30px"
         return;
     } else {
         let playerSelection = playerChoice;
