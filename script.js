@@ -11,7 +11,8 @@ let computerBoard = document.querySelector('.computerScore');
 
 buttons.forEach(function(button){
     button.addEventListener('click', function(e){
-            game(e.target.value);
+            game(e.target.attributes[1].value);
+            console.log(e)
     })
 })
 
@@ -21,41 +22,48 @@ function computerPlay(){
 }
 
 function playRound(playerSelection, computerSelection){
-    console.log("Your selection: " + playerSelection);
-    console.log("Computer selection: " + computerSelection);
-    let winnerMessage = (playerSelection + " beat(s) " + computerSelection);
-    let looserMessage = (computerSelection + " beat(s) " + playerSelection);
-    let tieMessage = ("It's a tie 👔! You both played " + playerSelection);
+    let winnerMessage = ("You win 🥳! Your " + playerSelection + " beat(s) computer's " + computerSelection + ".");
+    let looserMessage = ("You loose 😞! Computer's " + computerSelection + " beat(s) your " + playerSelection + ".");
+    let tieMessage = ("It's a tie 👔! You both played " + playerSelection + ".");
     let errorMessage = ("Please select again between rock, paper and scissors.");
+    let roundResult = document.getElementById("roundResult");
     if (playerSelection == "rock" && computerSelection == "scissors" ||
     playerSelection == "paper" && computerSelection == "rock" ||
     playerSelection == "scissors" && computerSelection == "paper"){
-        console.log(winnerMessage);
+        roundResult.textContent = winnerMessage;
+        roundResult.style.cssText = "color: green;"
         return win;
     } else if (computerSelection == "rock" && playerSelection == "scissors" ||
     computerSelection == "paper" && playerSelection == "rock" ||
     computerSelection == "scissors" && playerSelection == "paper"){
-        console.log(looserMessage);
+        roundResult.textContent = looserMessage;
+        roundResult.style.cssText = "color: red;"
         return loose;
     } else if (playerSelection === computerSelection){
-        console.log(tieMessage);
+        roundResult.textContent = tieMessage;
+        roundResult.style.cssText = "color: black;"
         return tie;
     } else {
-        console.log(errorMessage);
+        roundResult.textContent = errorMessage;
+        roundResult.style.cssText = "color: black;"
         return tie;
     }
 }
-
 function game(playerChoice){   
-    if (playerScore == 5){
+    let resultBoard = document.getElementById("resultBoard");
+    if (playerScore === 5){
+        resultBoard.textContent = "YOU WON THE GAME!"
+        resultBoard.style.cssText = "color: green; border: none;"
         return;
-    } else if (computerScore == 5){
+    } else if (computerScore === 5){
+        resultBoard.textContent = "YOU LOST THE GAME!"
+        resultBoard.style.cssText = "color: red; border: none;"
         return;
     } else {
         let playerSelection = playerChoice;
         let computerSelection = computerPlay();
         let roundResult = playRound(playerSelection, computerSelection);
-            console.log(roundResult);
+         console.log(roundResult);
             if (roundResult === win){
                 playerScore++;
                 playerBoard.textContent = playerScore;
@@ -65,4 +73,3 @@ function game(playerChoice){
             } 
     }
 }
-

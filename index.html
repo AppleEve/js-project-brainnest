@@ -5,15 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JS Brainnest Project</title>
+    <script src="https://kit.fontawesome.com/2314c33b20.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gorditas:wght@400;700&display=swap" rel="stylesheet">
+
 </head>
 <body>
-    <div class="resultBoard">
-        <div>Player score: <span class="playerScore">0 </span> </div>
+    <div id="resultBoard">
+        <div>Your score: <span class="playerScore">0 </span> </div>
         <div>Computer score: <span class="computerScore">0 </span> </div>
     </div>
-    <button class="playButton rock" value="rock">Rock 🪨</button>
-    <button class="playButton paper" value="paper">Paper 🧻</button>
-    <button class="playButton scissors" value="scissors">Scissors ✂️</button>
+    <div class="playerButtons">
+    <button class="playButton rock" >
+        <i class="fa-regular fa-hand-back-fist" value="rock"></i>
+    </button>
+    <button class="playButton paper" >
+        <i class="fa-regular fa-hand" value="paper"></i>
+    </button>
+    <button class="playButton scissors" >
+        <i class="fa-regular fa-hand-scissors" value="scissors"></i>
+    </button>
+ </div>   
+    <div id="roundResult"></div>
+
     <script src="script.js"></script>
+    
 </body>
 </html>

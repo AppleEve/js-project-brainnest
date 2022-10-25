@@ -1,0 +1,28 @@
+*{
+    background-color: rgb(123,152,170);
+    font-family: 'Gorditas', cursive;
+}
+
+#resultBoard{
+    border: 5px solid black;
+    border-radius: 15px;
+    text-align: center;
+    padding: 20px;
+    margin: 50px 40%;
+}
+
+.playerButtons{
+    display: flex;
+    justify-content: center;
+}
+.playButton{
+    border: 5px solid black;
+    border-radius: 50%;
+    font-size: 60px;
+    padding: 20px 24px;
+    margin: 50px;
+    cursor: pointer;
+}
+#roundResult{
+    text-align: center;
+}
