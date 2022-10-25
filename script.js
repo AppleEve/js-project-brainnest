@@ -2,6 +2,18 @@ let options = ["rock" , "paper" , "scissors"];
 let win = "You win 🥳!"
 let loose = "You loose 😞! ";
 let tie = "No winner 😒"
+let playerScore= 0;
+let computerScore = 0;
+
+let buttons = document.querySelectorAll('.playButton')
+let playerBoard = document.querySelector('.playerScore')
+let computerBoard = document.querySelector('.computerScore');
+
+buttons.forEach(function(button){
+    button.addEventListener('click', function(e){
+            game(e.target.value);
+    })
+})
 
 function computerPlay(){
     let randomNumber = Math.floor(Math.random()*3);
@@ -34,27 +46,23 @@ function playRound(playerSelection, computerSelection){
     }
 }
 
-function game(){
-    playerScore= 0;
-    computerScore = 0;
-    for (let i=0; i<5; i++){
-        let playerSelection = prompt("🪨, 🧻 or ✂️?").toLocaleLowerCase();
+function game(playerChoice){   
+    if (playerScore == 5){
+        return;
+    } else if (computerScore == 5){
+        return;
+    } else {
+        let playerSelection = playerChoice;
         let computerSelection = computerPlay();
         let roundResult = playRound(playerSelection, computerSelection);
-        console.log(roundResult);
-        if (roundResult === win){
-            playerScore++;
-        } else if (roundResult === loose){
-            computerScore++
-        } 
-    }
-    if (playerScore > computerScore){
-        console.log("CONGRATULATIONS! YOU WON THE GAME 💥")
-    } else if (computerScore > playerScore){
-        console.log("HAHA! YOU LOST THE GAME! 🙀")
-    } else {
-        console.log("UPS! IT'S A TIE! 🤷")
+            console.log(roundResult);
+            if (roundResult === win){
+                playerScore++;
+                playerBoard.textContent = playerScore;
+            } else if (roundResult === loose){
+                computerScore++
+                computerBoard.textContent = computerScore;
+            } 
     }
 }
 
-game();
