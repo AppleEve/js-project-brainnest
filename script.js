@@ -11,8 +11,8 @@ let computerBoard = document.querySelector('.computerScore');
 
 buttons.forEach(function(button){
     button.addEventListener('click', function(e){
-            game(e.target.attributes[1].value);
-            console.log(e)
+        game(e.target.attributes[1].value);
+        console.log(e)
     })
 })
 
@@ -30,7 +30,7 @@ function game(playerChoice){
         let playerSelection = playerChoice;
         let computerSelection = computerPlay();
         let roundResult = playRound(playerSelection, computerSelection);
-         console.log(roundResult);
+        console.log(roundResult);
             if (roundResult === win){
                 playerScore++;
                 playerBoard.textContent = playerScore;
