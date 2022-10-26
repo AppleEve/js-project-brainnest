@@ -16,6 +16,31 @@ buttons.forEach(function(button){
     })
 })
 
+function game(playerChoice){   
+    let resultBoard = document.getElementById("resultBoard");
+    if (playerScore === 5){
+        resultBoard.textContent = "YOU WON THE GAME!"
+        resultBoard.style.cssText = "color: rgb(38,134,71, 0.8); border: none; font-size: 30px"
+        return;
+    } else if (computerScore === 5){
+        resultBoard.textContent = "YOU LOST THE GAME!"
+        resultBoard.style.cssText = "color: rgb(139, 0, 0, 0.5); border: none; font-size: 30px"
+        return;
+    } else {
+        let playerSelection = playerChoice;
+        let computerSelection = computerPlay();
+        let roundResult = playRound(playerSelection, computerSelection);
+         console.log(roundResult);
+            if (roundResult === win){
+                playerScore++;
+                playerBoard.textContent = playerScore;
+            } else if (roundResult === loose){
+                computerScore++
+                computerBoard.textContent = computerScore;
+            } 
+    }
+}
+
 function computerPlay(){
     let randomNumber = Math.floor(Math.random()*3);
     return options[randomNumber];
@@ -37,7 +62,7 @@ function playRound(playerSelection, computerSelection){
     computerSelection == "paper" && playerSelection == "rock" ||
     computerSelection == "scissors" && playerSelection == "paper"){
         roundResult.textContent = looserMessage;
-        roundResult.style.cssText = "color: rgb(255,84,88, 0.9);"
+        roundResult.style.cssText = "color: rgb(139, 0, 0, 0.9);"
         return loose;
     } else if (playerSelection === computerSelection){
         roundResult.textContent = tieMessage;
@@ -49,27 +74,4 @@ function playRound(playerSelection, computerSelection){
         return tie;
     }
 }
-function game(playerChoice){   
-    let resultBoard = document.getElementById("resultBoard");
-    if (playerScore === 5){
-        resultBoard.textContent = "YOU WON THE GAME!"
-        resultBoard.style.cssText = "color: rgb(38,134,71, 0.8); border: none; font-size: 30px"
-        return;
-    } else if (computerScore === 5){
-        resultBoard.textContent = "YOU LOST THE GAME!"
-        resultBoard.style.cssText = "color: rgb(255,84,88, 0.9); border: none; font-size: 30px"
-        return;
-    } else {
-        let playerSelection = playerChoice;
-        let computerSelection = computerPlay();
-        let roundResult = playRound(playerSelection, computerSelection);
-         console.log(roundResult);
-            if (roundResult === win){
-                playerScore++;
-                playerBoard.textContent = playerScore;
-            } else if (roundResult === loose){
-                computerScore++
-                computerBoard.textContent = computerScore;
-            } 
-    }
-}
+
