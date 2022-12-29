@@ -9,7 +9,6 @@ h1,
 h2 {
   text-align: center;
   margin: 50px 0;
-  max-width: 90%;
 }
 
 h1 {
@@ -100,10 +99,8 @@ h1 {
 footer {
   font-size: 12px;
   text-align: center;
-  position: fixed;
   bottom: 0px;
-  padding: 40px;
-  max-width: 90%;
+  margin-bottom: 40px;
 }
 
 @media (max-width: 600px) {
