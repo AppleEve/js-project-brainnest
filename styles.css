@@ -58,7 +58,6 @@ h1 {
 .unactiveButton {
   border: 5px solid rgb(0, 0, 0, 0.2);
   border-radius: 50%;
-
   font-size: 60px;
   padding: 20px 24px;
   max-width: 125px;
@@ -73,6 +72,7 @@ h1 {
   text-align: center;
   margin-top: 40px;
   display: block;
+  width: 100%;
 }
 
 .link {
@@ -115,7 +115,10 @@ footer {
     font-size: 45px;
     padding: 15px 6px;
   }
+  h1,
+  h2,
   #roundResult {
-    max-width: 90%;
+    margin-left: 10px;
+    margin-right: 10px;
   }
 }
