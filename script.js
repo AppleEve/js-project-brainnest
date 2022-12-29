@@ -17,14 +17,15 @@ buttons.forEach(function (button) {
 });
 
 function game(playerChoice) {
+  let h2 = document.querySelector("h2");
   let resultBoard = document.getElementById("resultBoard");
   let rock = document.getElementById("rock");
   let paper = document.getElementById("paper");
   let scissors = document.getElementById("scissors");
   if (playerScore === 5) {
-    resultBoard.textContent = "YOU WON THE GAME!";
-    resultBoard.style.cssText =
-      "color: rgb(38,134,71, 0.8); border: none; font-size: 30px";
+    h2.textContent = "YOU WON THE GAME!";
+    h2.style.cssText =
+      "color: rgb(38,134,71, 0.9); border: none; font-size: 30px";
     roundResult.innerHTML =
       "<a href='.' class='link'><i class='fa-solid fa-rotate-right'></i>  PLAY AGAIN  </a>";
     rock.classList.remove("playButton");
@@ -33,11 +34,12 @@ function game(playerChoice) {
     paper.classList.add("unactiveButton");
     scissors.classList.remove("playButton");
     scissors.classList.add("unactiveButton");
+
     return;
   } else if (computerScore === 5) {
-    resultBoard.textContent = "YOU LOST THE GAME!";
-    resultBoard.style.cssText =
-      "color: rgb(139, 0, 0, 0.5); border: none; font-size: 30px";
+    h2.textContent = "YOU LOST THE GAME!";
+    h2.style.cssText =
+      "color: rgb(139, 0, 0, 0.9); border: none; font-size: 30px";
     roundResult.innerHTML =
       "<a href='.' class='link'><i class='fa-solid fa-rotate-right'></i>  PLAY AGAIN  </a>";
     rock.classList.remove("playButton");
@@ -46,6 +48,7 @@ function game(playerChoice) {
     paper.classList.add("unactiveButton");
     scissors.classList.remove("playButton");
     scissors.classList.add("unactiveButton");
+
     return;
   } else {
     let playerSelection = playerChoice;
