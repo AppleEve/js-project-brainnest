@@ -100,7 +100,8 @@ footer {
   font-size: 12px;
   text-align: center;
   position: fixed;
-  bottom: 40px;
+  bottom: 0px;
+  padding: 40px;
 }
 
 @media (max-width: 600px) {
