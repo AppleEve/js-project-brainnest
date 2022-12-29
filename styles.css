@@ -6,7 +6,7 @@
 }
 
 #resultBoard {
-  margin: 0 auto;
+  margin: 50px auto;
   max-width: 250px;
   border: 5px solid rgb(0, 0, 0, 0.6);
   border-radius: 15px;
